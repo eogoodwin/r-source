@@ -133,7 +133,7 @@ termplot <- function(model, data = NULL, envir = environment(formula(model)),
         if (!is.null(which.terms)) pres <- pres[, which.terms, drop = FALSE]
     }
 
-    se.lines <- function(x, iy, i, ff = 2) {
+    se.lines <- function(x, iy, i, ff = 1) {
         tt <- ff * terms$se.fit[iy, i]
         lines(x, tms[iy, i] + tt, lty = lty.se, lwd = lwd.se, col = col.se)
         lines(x, tms[iy, i] - tt, lty = lty.se, lwd = lwd.se, col = col.se)
